@@ -13,13 +13,16 @@ call plug#begin('~/.vim/plugged')
     let g:syntastic_mode_map = { 'mode': 'passive', 'passive_filetypes': ['ruby', 'typescript'] }
     let g:syntastic_ruby_checkers = ['rubocop']
     let g:syntastic_typescript_checkers = ['tslint']
-  Plug 'tpope/vim-endwise'
+  Plug 'leafgarland/typescript-vim'
+    let g:typescript_opfirst='\%([<>=,?^%|*/&]\|\([-:+]\)\1\@!\|!=\|in\%(stanceof\)\=\>\)'
   Plug 'nathanaelkane/vim-indent-guides'
     let g:indent_guides_auto_colors = 0
     let g:indent_guides_enable_on_vim_startup = 1
     let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
     autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=darkblue ctermbg=239
     autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkred ctermbg=243
+  Plug 'hashivim/vim-terraform'
+    let g:terraform_fmt_on_save = 1
 call plug#end()
 
 colorscheme default
